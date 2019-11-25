@@ -1,0 +1,33 @@
+module seven_seg (
+    input char[5],           // default from 4 to 5 bits as there are more than 15 states
+    output segs[7]
+  ) {
+ 
+  always {
+    case (char) {
+      5d0: segs = 7b0111111; //Display 0
+      5d1: segs = 7b0000110; //Display 1
+      5d22: segs = 7b1011011; //Display 2
+      5d30: segs = 7b1001111; //Display 3
+      5d5: segs = 7b1101101; //Display 5
+      5d7: segs = 7b0000111; //Display 7
+      5d9: segs = 7b1100111; //Display 9
+      5d2: segs = 7b1010000; //Display r     
+      5d10: segs = 7b1110111; //Display A
+      5d11: segs = 7b1111100; //Display b
+      5d12: segs = 7b0111001; //Display C
+      5d13: segs = 7b1011110; //Display d  
+      5d14: segs = 7b1111001; //Display E  
+      5d15: segs = 7b1110001; //Display F
+      5d16: segs = 7b1010100; //Display n
+      5d17: segs = 7b1110110; //Display H
+      5d18: segs = 8b10000000; //dot
+      5d3: segs = 7b0111110; //Display U   
+      5d4: segs = 7b0111000; //Display L  
+      5d6: segs = 7b1110011; //Display P
+      
+      default: segs = 7b0000000;
+    }
+  }
+}
+
